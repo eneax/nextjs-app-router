@@ -1,3 +1,5 @@
+export const revalidate = 420; // ISR revalidation period in seconds
+
 interface Post {
   title: string;
   content: string;
@@ -8,6 +10,17 @@ interface Props {
   params: {
     slug: string;
   };
+}
+
+// Dynamic data that doesn't change often (e.g. blog posts)
+export async function generateStaticParams() {
+  const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
+    (res) => res.json()
+  );
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export default async function BlogPostPage({ params }: Props) {
