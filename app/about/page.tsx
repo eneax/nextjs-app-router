@@ -4,14 +4,17 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "About NextSpace",
+  description: "About Next.js",
 };
 
 export default function About() {
   return (
     <div>
       <h1>About us</h1>
-      <p>We are a social media company that wants to bring people together!</p>
+      <p>
+        This is the about page for the <strong>Next.js</strong> App Router
+        project.
+      </p>
     </div>
   );
 }

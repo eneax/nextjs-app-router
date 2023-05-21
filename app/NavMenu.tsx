@@ -8,7 +8,7 @@ export default function NavMenu() {
   return (
     <nav className="bg-sky-600 text-white flex items-center justify-between h-20 px-4">
       <Link href="/">
-        <Image src="/logo.svg" alt="NextSpace Logo" width={216} height={30} />
+        <Image src="/next.svg" alt="Next Logo" width={216} height={30} />
       </Link>
 
       <ul className="list-none flex">
