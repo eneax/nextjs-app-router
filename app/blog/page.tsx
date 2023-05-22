@@ -1,9 +1,7 @@
 import Link from "next/link";
 
-import { CONTENT_API_URL } from "@/config";
-
 export default async function Blog() {
-  const posts = await fetch(`${CONTENT_API_URL}/api/content`).then((res) =>
+  const posts = await fetch("http://localhost:3000/api/content").then((res) =>
     res.json()
   );
 

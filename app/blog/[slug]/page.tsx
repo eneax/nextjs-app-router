@@ -1,5 +1,3 @@
-import { CONTENT_API_URL } from "@/config";
-
 export const revalidate = 420; // ISR revalidation period in seconds
 
 interface Post {
@@ -16,7 +14,7 @@ interface Props {
 
 // Dynamic data that doesn't change often (e.g. blog posts)
 export async function generateStaticParams() {
-  const posts: Post[] = await fetch(`${CONTENT_API_URL}/api/content`).then(
+  const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
     (res) => res.json()
   );
 
@@ -26,7 +24,7 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const posts: Post[] = await fetch(`${CONTENT_API_URL}/api/content`).then(
+  const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
     (res) => res.json()
   );
   const post = posts.find((post) => post.slug === params.slug);
