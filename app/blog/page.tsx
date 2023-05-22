@@ -7,11 +7,10 @@ export default async function Blog() {
 
   return (
     <div>
-      <h1 className="mb-8">Welcome to our Blog</h1>
-
+      <h1>Welcome to our Blog</h1>
       <ul>
         {posts.map((post: any) => (
-          <li key={post.slug} className="my-2">
+          <li key={post.slug}>
             <Link href={`/blog/${post.slug}`}>{post.title}</Link>
           </li>
         ))}

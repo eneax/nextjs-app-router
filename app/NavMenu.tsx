@@ -1,32 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import styles from "./NavMenu.module.css";
+
 import { SignInButton, SignOutButton } from "@/components/buttons";
 import AuthCheck from "@/components/AuthCheck";
 
 export default function NavMenu() {
   return (
-    <nav className="bg-sky-600 text-white flex items-center justify-between h-20 px-4">
+    <nav className={styles.nav}>
       <Link href="/">
         <Image src="/next.svg" alt="Next Logo" width={216} height={30} />
       </Link>
 
-      <ul className="list-none flex">
-        <li className="flex items-center h-20 p-1">
+      <ul className={styles.links}>
+        <li>
           <Link href="/about">About</Link>
         </li>
-        <li className="flex items-center h-20 p-1">
+        <li>
           <Link href="/blog">Blog</Link>
         </li>
-        <li className="flex items-center h-20 p-1">
+        <li>
           <Link href="/users">Users</Link>
         </li>
-        <li className="flex items-center h-20 p-1">
+        <li>
           <SignInButton />
         </li>
 
         <AuthCheck>
-          <li className="flex items-center h-20 p-1">
+          <li>
             <SignOutButton />
           </li>
         </AuthCheck>

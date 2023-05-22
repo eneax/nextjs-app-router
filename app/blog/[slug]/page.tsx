@@ -1,4 +1,4 @@
-export const revalidate = 420; // ISR revalidation period in seconds
+export const revalidate = 1200; // ISR revalidation period in seconds
 
 interface Post {
   title: string;
